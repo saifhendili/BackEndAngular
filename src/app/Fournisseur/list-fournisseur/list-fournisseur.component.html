@@ -1,5 +1,7 @@
 
 
+<router-outlet></router-outlet>
+
 <table class="table pasi" >
   <thead>
     <tr>
@@ -35,7 +37,7 @@
   <app-edit-fournisseur  (edited)="editMyFournisseur($event)"  *ngIf="show" [Fournisseur]="Fournisseur"></app-edit-fournisseur>
 
 
-<app-form-fournisseur (aded)="addFournisseur($event)" *ngIf="showAdd"></app-form-fournisseur>
+<app-form-fournisseur class="posiForm" (aded)="addFournisseur($event)" *ngIf="showAdd"></app-form-fournisseur>
 
 
 <app-fournisseur-pie-charts *ngIf="showstat"></app-fournisseur-pie-charts>

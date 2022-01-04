@@ -16,13 +16,14 @@ export class FormFournisseurComponent implements OnInit {
 
   ngOnInit(): void {
     this.myForm=new FormGroup({
-      idFournisseur:new FormControl(),
-      codeFournisseur: new FormControl(),
-      libelleFournisseur: new FormControl(),
+ 
+      codeFournisseur: new FormControl('',Validators.required),
+      libelleFournisseur: new FormControl('',Validators.required)
     }) 
   }
 add(){
   this.founisseurService.addFournisseur(this.myForm.value).subscribe();
+  console.log(this.myForm.value)
 this.aded.emit(this.myForm.value);
 this.myForm.reset();
 }
